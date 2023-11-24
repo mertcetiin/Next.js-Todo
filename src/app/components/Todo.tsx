@@ -1,6 +1,11 @@
 import React from 'react'
+import { useTodoStore } from '../states/store';
+
 
 function Todo() {
+
+
+
     return (
         <div>
             <input type="text" className='pl-2 ml-5 rounded outline-none' />
