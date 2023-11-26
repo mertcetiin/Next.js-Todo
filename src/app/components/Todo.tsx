@@ -9,6 +9,7 @@ function Todo() {
     const newTodoState = useTodoStore((state) => state.newTodoState);
     const addTodo = useTodoStore((state) => state.addTodo);
 
+    const deleteBtn = useTodoStore((state) => state.deleteBtn);
 
     return (
         <div>
@@ -24,8 +25,12 @@ function Todo() {
             {todoState.map((item: string, id: number) => (
                 <div key={id}>
                     <h1>{item}</h1>
+                    <button className="mt-3 mb-3 border-2 p-2 rounded"
+                        onClick={() => deleteBtn(id)}
+                    >Delete</button>
                 </div>
-            ))}
+            ))
+            }
 
         </div >
     )
