@@ -5,7 +5,7 @@ interface TodoState {
     todoState: any;
     newTodoState: any;
     addTodo: () => void;
-    deleteBtn: any;
+    deleteBtn: (id: number) => void;
 }
 
 export const useTodoStore = create<TodoState>()((set) => ({
@@ -19,7 +19,7 @@ export const useTodoStore = create<TodoState>()((set) => ({
         newTodoState: '',
     })),
 
-    deleteBtn: () => set((state) => ({
-        todoState: state.todoState.filter((id: number) => id !== id)
+    deleteBtn: (id) => set((state) => ({
+        todoState: state.todoState.filter((item: string, index: number) => index !== id),
     })),
 }));
